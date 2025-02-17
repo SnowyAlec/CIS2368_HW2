@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Store</title>
+    <style>
+        /* Button styling */
+        #loadButton {
+            background-color: #007bff; /* Blue color */
+            color: white;              /* White text */
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #loadButton:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+        /* Checkbox styling */
+        .checkbox-label {
+            font-size: 16px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1><%= data %></h1>
+    <p>Click the button below to load 3 random products:</p>
+
+    <!-- Checkbox and Button -->
+    <label class="checkbox-label">
+        <input type="checkbox" id="sortCheckbox">
+        Sort Alphabetically
+    </label>
+    <button id="loadButton">Load Random Products</button>
+
+    <script>
+        document.getElementById("loadButton").addEventListener("click", function() {
+            const sort = document.getElementById("sortCheckbox").checked;
+            const url = sort ? "/random-products?sort=true" : "/random-products";
+            window.location.href = url;
+        });
+    </script>
+</body>
+</html>

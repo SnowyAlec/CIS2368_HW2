@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Products</title>
+</head>
+<body>
+    <h1><%= tagline %></h1>
+    <div id="products">
+        <% data.forEach(product => { %>
+            <div>
+                <h2><%= product.title %></h2>
+                <p>Price: $<%= product.price %></p>
+                <img src="<%= product.image %>" alt="<%= product.title %>" width="100">
+                <p>Rating: <%= product.rating.rate %> / 5</p>
+            </div>
+            <hr>
+        <% }) %>
+    </div>
+    <a href="/">
+        <button>Back to Home</button>
+    </a>
+</body>
+</html>
